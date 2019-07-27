@@ -1,0 +1,19 @@
+  <form ngNativeValidate (ngSubmit)= 'save()' [formGroup]= "customerForm">
+    <div class= 'form-group'>
+    <br>
+    Name:<input id="name" class='form-control' type="text" formControlName= "firstname" required><br>
+    Email:<input id="email" class='form-control' type="email" formControlName= "email" required><br>
+
+    Age:<input id="age" class='form-control' type="number" formControlName= "age"><br>
+      
+  </div>
+    
+
+    <span *ngIf= "customerForm.get('age').errors?.ageValidator">Only for age group 20 to 70</span><br>
+    <button class="btn btn-success" (click)= 'loadData()'>Test</button> &#160;
+
+    <button class="btn btn-primary">Submit</button>
+
+  
+  </form>
+
